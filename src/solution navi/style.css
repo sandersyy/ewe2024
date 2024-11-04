@@ -1,0 +1,88 @@
+body {
+    display: flex;  /* This is a single-line comment */
+    flex-direction: column;   /* content verticaly allign */
+    min-height: 100vh;
+    font-family: Calibri
+}
+
+header {
+    
+    padding: 10px;
+    text-align: center;
+    color: darkblue;
+    font-size: 20px;
+    display: block;
+    background-color: #a9d7d1;
+}
+
+.navi{   
+    background-color: #2ecc71;
+    color: #fff;
+    padding: 0;
+    width: 100%;
+    position: sticky;
+    top: 0;
+}
+ul{  
+    background-color: darkblue;
+    list-style-type: none;
+}
+a{
+    text-decoration: none;}
+li a,.content a{
+    float: left;
+    display: block;
+    width: 100px;
+    padding: 10px;
+    text-align: center;
+    border-radius: 3px;
+}
+li a:hover:not(.active),.content a:hover{
+     color: #f2f2f2;
+    background-color:darkblue ;
+    transition: .5s;
+}
+li a.active{
+    float: right;
+    color: #f2f2f2;
+    background-color:darkblue ;
+    position: relative;
+}
+
+main {
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+
+    
+}
+
+.content {
+    padding: 10px;
+    margin: 10px;
+    background: #ecf0f1;
+    flex-grow: 1;
+    border-radius: 5px;
+    width: 100px;
+   
+
+}
+
+aside {
+    width: 250px;
+    background-color: #e74c3c;
+    color: #fff;
+    padding: 10px;
+}
+
+footer {
+    background-color: #34495e;
+    color: #fff;
+    padding: 10px;
+}
+@media screen and (max-width: 600px) {
+    div.example {
+        display: none;
+    }
+}

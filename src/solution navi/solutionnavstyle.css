@@ -1,7 +1,7 @@
 body {
     display: flex;  /* This is a single-line comment */
     flex-direction: column;   /* content verticaly allign */
-    min-height: 100vh;
+    height: 100%;
     font-family: Calibri
 }
 
@@ -27,8 +27,7 @@ ul{
     background-color: darkblue;
     list-style-type: none;
 }
-a{
-    text-decoration: none;}
+
 li a,.content a{
     float: left;
     display: block;
@@ -36,13 +35,14 @@ li a,.content a{
     padding: 10px;
     text-align: center;
     border-radius: 3px;
+    text-decoration: none;
 }
-li a:hover:not(.active),.content a:hover{
+li a:hover:not(.playy),.content a:hover{
      color: #f2f2f2;
     background-color:darkblue ;
     transition: .5s;
 }
-li a.active{
+a.playy{
     float: right;
     color: #f2f2f2;
     background-color:darkblue ;
@@ -54,6 +54,7 @@ main {
 .container{
     display: flex;
     flex-wrap: wrap;
+    height: 100%;
 
     
 }
@@ -69,12 +70,12 @@ main {
 
 }
 
-aside {
-    width: 250px;
-    background-color: #e74c3c;
-    color: #fff;
-    padding: 10px;
-}
+/*aside {*/
+/*    width: 250px;*/
+/*    background-color: #e74c3c;*/
+/*    color: #fff;*/
+/*    padding: 10px;*/
+/*}*/
 
 footer {
     background-color: #34495e;

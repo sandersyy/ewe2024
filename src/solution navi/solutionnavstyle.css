@@ -20,7 +20,7 @@
 
 }
 
-a,button{
+a{
     color: #fff;
     text-decoration: none;
     text-align: center;
@@ -67,7 +67,7 @@ a.playy{
 }
 
 /*RWD FOR  navi */
-@media screen and (max-width: 500px){
+@media (max-width: 500px){
     .topnavi{
         display: flex;
         flex-direction: column;
@@ -83,15 +83,16 @@ a.playy{
     grid-template-rows: 1fr 1fr 1fr 1fr;
     #gap: 0px 0px;
     grid-auto-flow: row;
-
     place-content: stretch;*/
-    grid-area: 2 / 1 / 3 / 2;
+    #grid-area: 2 / 1 / 3 / 2;
     display: grid;
-    --auto-grid-min-size: 16rem;
+    --auto-grid-min-size: 20rem;
     --auto-grid-min-size-row: 12rem;
     grid-auto-flow: row;
     grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size), 1fr));
-    grid-template-rows: repeat(auto-fill, minmax(var(--auto-grid-min-size-row), 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(var(--auto-grid-min-size-row)));/*gleiche Höhe für alle Elemente unabhängig von Behältershöhe */
+    #grid-gap: 1rem;
+    overflow: auto;
     /*
       grid-template-rows: repeat(12, 1fr) ;
       justify-content: stretch;
@@ -137,7 +138,7 @@ a.playy{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    #align-items: flex-end;
+    #justify-content: end;
     place-content:space-evenly space-evenly;    /*#align items whith equal space from the edge of the container*/
 }
 .flexcontainer li a{

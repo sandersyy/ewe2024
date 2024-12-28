@@ -1,0 +1,94 @@
+/* Style de réinitialisation pour éviter les marges et paddings par défaut */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style de la barre de navigation */
+.navbar {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Contenu principal */
+.content {
+    text-align: center;
+    margin: 20px;
+}
+
+h1 {
+    font-family: Arial, sans-serif;
+    margin-bottom: 20px;
+}
+
+/* Grid container */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.book-image img {
+    width: 100%;
+    height: auto;
+}
+
+.book-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+}
+
+.book-details p {
+    font-family: Arial, sans-serif;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.book-details button {
+    padding: 10px 20px;
+    background-color: #ff6f00;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+/* Style du pied de page */
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+.footer button {
+    padding: 10px 20px;
+    background-color: #ff6f00;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+/* Responsive design pour les petits écrans */
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rednerliste mit Zeitmessung</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .speaker { margin-bottom: 10px; }
+        .speaker-time { font-weight: bold; margin-left: 10px; }
+        .add-speaker { margin-top: 15px; }
+    </style>
+</head>
+<body>
+
+<h2>Rednerliste mit Zeitmessung</h2>
+
+<input id="speakerName" type="text" placeholder="Neuer Rednername">
+<button onclick="addSpeaker()">Hinzufügen</button>
+
+<div id="speakers"></div>
+
+<script>
+    let activeTimer = null;  // Referenz für den aktiven Timer
+    let activeSpeakerId = null;  // ID des aktiven Redners
+
+    // Funktion, um einen neuen Redner hinzuzufügen
+    function addSpeaker() {
+        const speakerNameInput = document.getElementById("speakerName");
+        const name = speakerNameInput.value.trim();
+        if (!name) return;
+
+        const speakerId = Date.now();  // Einzigartige ID für den Redner
+
+        const speakerDiv = document.createElement("div");
+        speakerDiv.classList.add("speaker");
+        speakerDiv.id = `speaker-${speakerId}`;
+
+        speakerDiv.innerHTML = `
+        <span>${name}</span>
+        <span class="speaker-time" id="time-${speakerId}">0s</span>
+        <button onclick="toggleTimer(${speakerId})">Start/Stop</button>
+      `;
+
+        document.getElementById("speakers").appendChild(speakerDiv);
+        speakerNameInput.value = "";
+        speakerNameInput.focus();
+
+        // Speichern der Zeit und ID im Speaker-Objekt
+        speakerDiv.dataset.time = 0;
+        speakerDiv.dataset.isRunning = "false";
+
+        // Timer des neu hinzugefügten Redners direkt starten
+        toggleTimer(speakerId);
+    }
+
+    // Timer für den Redner starten oder stoppen
+    function toggleTimer(speakerId) {
+        // Zuvor laufenden Timer stoppen
+        if (activeTimer) clearInterval(activeTimer);
+
+        const speakerDiv = document.getElementById(`speaker-${speakerId}`);
+        const isRunning = speakerDiv.dataset.isRunning === "true";
+
+        if (isRunning) {
+            speakerDiv.dataset.isRunning = "false";
+            activeTimer = null;
+            activeSpeakerId = null;
+        } else {
+            // Alle anderen Timer stoppen und diesen starten
+            Array.from(document.querySelectorAll('.speaker')).forEach(div => {
+                div.dataset.isRunning = "false";
+            });
+
+            speakerDiv.dataset.isRunning = "true";
+            activeSpeakerId = speakerId;
+
+            activeTimer = setInterval(() => {
+                speakerDiv.dataset.time = parseInt(speakerDiv.dataset.time) + 1;
+                document.getElementById(`time-${speakerId}`).textContent = `${speakerDiv.dataset.time}s`;
+            }, 1000);
+        }
+    }
+
+    // Enter-Taste für Hinzufügen verwenden
+    document.getElementById("speakerName").addEventListener("keyup", function(event) {
+        if (event.key === "Enter") {
+            addSpeaker();
+        }
+    });
+</script>
+
+</body>
+</html>

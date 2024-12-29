@@ -15,7 +15,6 @@
                     #34495e,
                     black
             );
-    #background: black;
     align-content: center;
 
 }
@@ -29,14 +28,13 @@ a{
 }
 
 /*style for top*/
-.top{
+.top{    position: sticky;
     top:0 ;
-    position: sticky;
+    #background-color: #34495e;
     background-color: black;
 }
 h1 {
     padding: 10px;
-    text-align: left;
     color: white;
     font-size: 20px;
     display: block;
@@ -90,41 +88,61 @@ a.playy{
     --auto-grid-min-size-row: 12rem;
     grid-auto-flow: row;
     grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size), 1fr));
-    grid-template-rows: repeat(auto-fill, minmax(var(--auto-grid-min-size-row)));/*gleiche Höhe für alle Elemente unabhängig von Behältershöhe */
+    grid-template-rows: repeat(auto-fill, minmax(var(--auto-grid-min-size-row))); /*gleiche Höhe für alle Elemente unabhängig von Behältershöhe */
     #grid-gap: 1rem;
-    overflow: auto;
+    overflow: auto;}
+
     /*
-      grid-template-rows: repeat(12, 1fr) ;
-      justify-content: stretch;
-      align-content: center;
-      justify-items: stretch;
-      align-items: stretch;
-      */
-}
-.content {
+  grid-template-rows: repeat(12, 1fr) ;
+  justify-content: stretch;
+  align-content: center;
+  justify-items: stretch;
+  align-items: stretch;
+  */
+
+    .content {
     display: grid;
     margin: 5px;
     background: #5e5b5c;
     color: #f2f2f2;
     border-radius: 5px;
     #align-content: center;
-    #place-content:stretch;
+    #place-content: stretch;
 
 
 }
-.content a:hover{
+
+    .content a:hover {
     #display: block;
-    background-color:darkblue ;
+    background-color: darkblue;
     transition: .5s;
     align-content: center;
 }
-.content a{
-    font:  bold 25px sans-serif;
+
+    .content a {
+    font: bold 25px sans-serif;
     display: grid;
     align-content: start;
-    background-color:yellowgreen;
+    background-color: yellowgreen;
 
-    
+
+}
+
+/*style for gamemidcontainer*/
+
+/*style for homemidcontainer*/
+.homemidcontainer{
+    display: flex;
+    flex-direction: column;
+    place-content: center start;
+    place-items: center center;
+    text-align: center;
+    font-size: 30px;
+}
+
+table, th, td {
+    border: 1px solid #ccc;
+    padding: 5px;
 }
 
 /*style for footer*/

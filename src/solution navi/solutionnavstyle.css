@@ -7,7 +7,7 @@
 .thebody {  height: 100%;
     display: grid;
     grid-template-columns: auto;
-    grid-template-rows: 1fr 6fr 3fr;
+    grid-template-rows: 1fr 6fr 2fr;
     gap: 0px 0px;
     grid-auto-flow: row;
     background-image:
@@ -129,6 +129,14 @@ a.playy{
 }
 
 /*style for gamemidcontainer*/
+    .gamemidcontainer{
+        display:grid ;
+        grid-template: 1fr 4fr 1fr 1fr/auto;
+        place-content: start space-around;
+        justify-self:center ;
+        width: 50%;
+        border: 2px inset #333333;
+    }
 
 /*style for homemidcontainer*/
 .homemidcontainer{

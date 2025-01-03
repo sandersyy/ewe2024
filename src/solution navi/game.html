@@ -7,7 +7,7 @@
     <title>Solution Page</title>
     <link rel="stylesheet" href="solutionnavstyle.css" >
     <link rel="stylesheet" href="divers/button.css" >
-    <script src="jscript/game.js"></script>
+    <script src="jscript/game.js " defer></script>
 </head>
 <body class="thebody">
 
@@ -24,16 +24,20 @@
         </div>
         <div class="gamemidcontainer">
             <div class="game description">
-                <h1 id="main-title">Wilkommen zum DOM Abenteur Spiel</h1>
+                <h1 id="game-title">Wilkommen zum DOM Abenteur Spiel</h1>
             </div>
             <div id="game-area">
+                <div id="questiondiv">
+                    <h1 id="question-h1">Klicke auf den Button zum Starten</h1>
+                </div>
 
-                <ul id="question-list">
-                    <!-- Questions générées dynamiquement -->
+                <!--<ul id="question-list">
+                    &lt;!&ndash; Questions générées dynamiquement &ndash;&gt;
                 </ul>
                 <button id="next-level" style="display: none;">Passer au niveau suivant</button>
+         -->
             </div>
-            <button id="spielbegin"class="button-5" role="button">Spiel beginnen</button>
+            <button id="button" class="button-5" role="button">Spiel beginnen</button>
             <div class="game timer">Timer</div>
             
         </div>

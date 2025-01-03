@@ -37,7 +37,7 @@ h1 {
     padding: 10px;
     color: white;
     font-size: 20px;
-    display: block;
+    text-align: center;
 }
 
  /*style for navigation navi*/
@@ -90,7 +90,11 @@ a.playy{
     grid-template-columns: repeat(auto-fill, minmax(var(--auto-grid-min-size), 1fr));
     grid-template-rows: repeat(auto-fill, minmax(var(--auto-grid-min-size-row))); /*gleiche Höhe für alle Elemente unabhängig von Behältershöhe */
     #grid-gap: 1rem;
-    overflow: auto;}
+    overflow: auto;
+
+    margin: 30px; /*distance to the top border*/
+}
+
 
     /*
   grid-template-rows: repeat(12, 1fr) ;
@@ -108,7 +112,7 @@ a.playy{
     border-radius: 5px;
     #align-content: center;
     #place-content: stretch;
-
+    box-shadow: rgba(7, 5, 5, 0.73) 0 5px 8px;
 
 }
 
@@ -127,16 +131,39 @@ a.playy{
 
 
 }
+.content a:active {
+    background-color: #c85000;   }
 
 /*style for gamemidcontainer*/
-    .gamemidcontainer{
+.gamemidcontainer{
         display:grid ;
-        grid-template: 1fr 4fr 1fr 1fr/auto;
-        place-content: start space-around;
-        justify-self:center ;
-        width: 50%;
+        grid-template-rows: 1fr 4fr 1fr 1fr;
+        place-self: stretch center ;
+        place-items:stretch center;
+        width: 80%;
         border: 2px inset #333333;
     }
+
+    input[type=text]{
+        font: bold 15px sans-serif;
+        padding: 12px;
+        margin: 12px 0;
+        border: 1px solid blue;
+        border-radius: 14px;
+        width: 50%;
+    }
+    #game-area{  display:grid ;
+        place-content:start center;
+        place-items: start center;
+        width: 60vw;
+        background-color: #ff6f00;
+        border: 8px solid lawngreen;
+        border-radius: 14px;
+    }
+    #questiondiv{display: grid;
+           place-content:inherit ;
+           place-items: center;
+       }
 
 /*style for homemidcontainer*/
 .homemidcontainer{

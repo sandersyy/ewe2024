@@ -7,6 +7,8 @@
 
     myPromise.then(function() {
     document.getElementById("demo").innerHTML = "Nächstes Spiel";});*/
+// Importation des fonctions spécifiques
+import { startGame, endGame } from './quizgame.js';
 
     //Dom Elemente Deklaration
      let name="kamto";
@@ -14,7 +16,7 @@
      let gamearea=document.getElementById("game-area") ;
      var button=document.getElementById('button') ;
      var questionh1=document.getElementById("question-h1");
-      var questiondiv=document.getElementById('questiondiv')
+     var questiondiv=document.getElementById('questiondiv')
 //funktionen
 
 //name eingeben und anzeigen mit DOM selektion und Manipulation und eventlistener
@@ -30,7 +32,7 @@
         gamearea
             .addEventListener("input",(e)=>
             {if(e.target.id==='textinput1')name=e.target.value});
-        button.removeEventListener("click", spiel1_domselect);
+        //button.removeEventListener("click", spiel1_domselect);
         button.addEventListener("click", spiel2_nameEingabe);
         console.log(gamearea)
 
@@ -40,10 +42,19 @@
         console.log(gamearea)
 
         questiondiv.innerHTML=` <div id="questiondiv">
-                    <h1 id="question-h2">Glückwunch ${name} !!.du hast diese Stuffe erledigt!!  
-                     <br> </h1>`
+                    <h1 id="question-h2">Glückwunch ${name} !!.du hast diese Stuffe erledigt!!<br>  
+                     jetzt kommt die Quizz Game!!<br> </h1>`
         console.log(name) ;
-        button.removeEventListener("click", spiel2_nameEingabe);
+        //button.removeEventListener("click", spiel2_nameEingabe);
+        // Using imported functions
+        button.addEventListener('click', ()=>
+        {button.textContent="Quiz starten";
+            gamearea.innerHTML=` <div id="questiondiv">
+            <h1 id="question">klicke auf  "Quiz starten" um Quiz zu Starten.</h1>
+            <ul id="answers"></ul>`});
+
+        button.addEventListener('click', startGame);
+       // document.getElementById('end-game').addEventListener('click', endGame);
     }
     
 // Initialisation

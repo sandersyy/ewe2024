@@ -39,13 +39,12 @@ function displayQuestion() {
     // Afficher la question dans l'élément HTML avec l'ID "question"
     document.getElementById('question').textContent = questionData.question;
 
-    // Afficher les réponses sous forme de liste
+    // display answers in list Form
     const answersElem = document.getElementById('answers');
     answersElem.innerHTML = questionData.answers
-        .map(answer => `<li>${answer}</li>`) // Générer une liste HTML pour chaque réponse
-        .join(''); // Concaténer toutes les réponses dans une seule chaîne
-
-    // Ajouter un gestionnaire d'événement pour chaque réponse
+        .map(answer => `<li>${answer}</li>`) // generate HTML listelement  for evry answer
+        .join(''); // concat all answer in one list chain
+    // add eventlistener for every answer
     const answerElements = answersElem.querySelectorAll('li');
     answerElements.forEach((elem, index) => {
         elem.addEventListener('click', () => checkAnswer(questionData.answers[index], questionData.correctAnswer));
@@ -58,11 +57,11 @@ function displayQuestion() {
  * @param {string} correctAnswer - La réponse correcte.
  */
 function checkAnswer(selectedAnswer, correctAnswer) {
-    // Vérifier si la réponse est correcte
+    // verifie if answer is correct
     const isCorrect = selectedAnswer === correctAnswer;
-    results.push(isCorrect); // Ajouter le résultat (vrai ou faux) au tableau des résultats
-    currentQuestionIndex++; // Passer à la question suivante
-    displayQuestion(); // Afficher la prochaine question
+    results.push(isCorrect); // add true or false to the result Table
+    currentQuestionIndex++; // next question indexed
+    displayQuestion(); // display next question
 }
 
 /**
@@ -70,11 +69,11 @@ function checkAnswer(selectedAnswer, correctAnswer) {
  * Appelle la fonction de sauvegarde des résultats après le calcul.
  */
 function calculateFinalScore() {
-    // Calculer le nombre total de réponses correctes
+    // calculate total correct answer with reduce on correct ones
     const totalCorrectAnswers = results.reduce((total, result) => total + (result ? 1 : 0), 0);
 
-    // Afficher un message avec le score final
-    alert(`Vous avez correctement répondu à ${totalCorrectAnswers} question(s) sur ${results.length}.`);
+    // display final score
+    alert(`du hast  ${totalCorrectAnswers} gute Antwort ausgewählt auf ${results.length} Fragen.`);
 
     endGame(); // Sauvegarder les résultats après calcul
 }
@@ -84,29 +83,29 @@ function calculateFinalScore() {
  */
 export async function endGame() {
     try {
-        const message = await saveResults(results); // Appel de la fonction asynchrone de sauvegarde
-        alert(message); // Afficher un message de succès
+        const message = await saveResults(results); // call saveresult
+        alert(message); // display succes message
         resetGame();
     } catch (error) {
-        // Gérer les erreurs lors de la sauvegarde des résultats
+
         alert("Erreur : " + error);
     }
 }
 
 /**
  * Simule la sauvegarde asynchrone des résultats.
- * @param {Array} results - Le tableau des résultats.
+ * @param {Array} results - result Array.
  * @returns {Promise} Une promesse qui résout ou rejette selon la condition.
  */
 function saveResults(results) {
     return new Promise((resolve, reject) => {
         setTimeout(() => {
             if (results.length > 0) {
-                // Résoudre la promesse si des résultats existent
-                resolve("Les résultats ont été sauvegardés avec succès !");
+                // Promise resolve if there are results
+                resolve("Ergebniss erfolgreich gespeichert !");
             } else {
-                // Rejeter la promesse si aucun résultat n'est disponible
-                reject("Aucun résultat à sauvegarder.");
+                // reject if nothing
+                reject("nix zu Speichern.");
             }
         }, 1000); // Simule un délai d'une seconde
     });

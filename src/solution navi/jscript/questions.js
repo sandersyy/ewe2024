@@ -3,25 +3,25 @@ export const getQuestions = () => {
         setTimeout(() => {
             resolve([
                 {
-                    question: "Quel est le capital de la France ?",
+                    question: "was ist Frankreich Hauptstadt ?",
                     answers: ["Paris", "Lyon", "Marseille"],
                     correctAnswer: "Paris",
-                    difficulty: "facile"
+                    difficulty: "easy"
                 },
                 {
-                    question: "Combien de continents y a-t-il ?",
+                    question: "2+7-4= ?",
                     answers: ["5", "6", "7"],
-                    correctAnswer: "7",
+                    correctAnswer: "5",
                     difficulty: "facile"
                 },
                 {
-                    question: "En quelle année a eu lieu la Révolution française ?",
-                    answers: ["1776", "1789", "1812"],
-                    correctAnswer: "1789",
+                    question: "welcher der fünfte Planet des Sonnensystems ist ?",
+                    answers: ["Erde", "Jupiter", "Uranus"],
+                    correctAnswer: "Jupiter",
                     difficulty: "moyen"
                 },
                 {
-                    question: "Qui est connu comme le père de la physique moderne ?",
+                    question: "wer ist der Vater des modernischen Physik ?",
                     answers: ["Isaac Newton", "Albert Einstein", "Galilée"],
                     correctAnswer: "Albert Einstein",
                     difficulty: "difficile"

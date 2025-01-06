@@ -1,7 +1,7 @@
 export const ball = document.getElementById('ball');
-const gameAreasvg = document.getElementById('area');
-const message = document.getElementById('message');
-const difficultySelector = document.querySelector("option");
+let gameAreasvg = document.getElementById('area');
+let message = document.getElementById('message');
+let difficultySelector = document.querySelector("option");
 export const startButton = document.getElementById('startsvggame');
 
 let ballDirection = 1; // ball direction (1 = right, -1 = left)
@@ -16,7 +16,7 @@ export function startGamesvg() {
     ballPosition = 50;
     ballDirection = 1;
     gameRunning = true;
-   // message.textContent = 'start';
+   // message.textContent = 'klicke auf die Kugel';
 
     // define speed in function of difficulty
     /*let difficulty = difficultySelector.value;
@@ -37,7 +37,7 @@ export function startGamesvg() {
 
 
 
-    function animateBall() {
+function animateBall() {
         if (!gameRunning) return;
 
         // update ball position
@@ -65,7 +65,7 @@ export function handleBallClick() {
     stopGame();
 
     //
-    message.textContent = 'Glückwunch !';
+    message.textContent = "Glückwunch !";
 }
 
 // spiel stoppen

@@ -7,8 +7,8 @@ let currentQuestionIndex = 0; // current question index
 export let results = []; // table to save answers result true or false
 
 /**
- * Fonction principale pour démarrer le jeu
- * Elle récupère les questions de manière asynchrone et affiche la première question.
+ * main function to start the gaame
+ * fetch question in asynchronous way and display the first question.
  */
 export async function startGame() {
     try {
@@ -17,7 +17,7 @@ export async function startGame() {
         displayQuestion(); // display first question
     } catch (error) {
         //
-        console.error("error fetching question :", error);
+        console.error("Fehler beim Fragen Abruf :", error);
     }
 }
 
@@ -71,7 +71,7 @@ function calculateFinalScore() {
     const totalCorrectAnswers = results.reduce((total, result) => total + (result ? 1 : 0), 0);
 
     // display final score
-    alert(`du hast  ${totalCorrectAnswers} gute Antwort ausgewählt auf ${results.length} Fragen.`);
+    alert(`du hast  ${totalCorrectAnswers} richtige Antworte auf ${results.length} Fragen.`);
 
     endGame(); // save result after calcul
 }

@@ -9,7 +9,7 @@
     document.getElementById("demo").innerHTML = "Nächstes Spiel";});*/
 // Importation des fonctions spécifiques
 import { startGame, endGame } from './quizgame.js';
-import {startGamesvg, handleBallClick, ball, startButton} from './svgGAME.js';
+import {startGamesvg, handleBallClick} from './svgGAME.js';
 
 
     //Dom Elemente Deklaration
@@ -20,8 +20,6 @@ import {startGamesvg, handleBallClick, ball, startButton} from './svgGAME.js';
      var buttonsvg=document.getElementById('buttonsvg') ;
      var questiondiv=document.getElementById('questiondiv')
 //funktionen
-
-//name eingeben und anzeigen mit DOM selektion und Manipulation und eventlistener
 
     function spiel1_domselect(e){
         //gamearea.firstElementChild.remove() //remove the old first div to insert the new one
@@ -65,6 +63,7 @@ import {startGamesvg, handleBallClick, ball, startButton} from './svgGAME.js';
 
        // document.getElementById('end-game').addEventListener('click', endGame);
     }
+
 // Initialisation
     button.addEventListener("click", spiel1_domselect)  ;
     buttonsvg.addEventListener("click",()=>{ //even to enter svg game div
@@ -85,8 +84,8 @@ import {startGamesvg, handleBallClick, ball, startButton} from './svgGAME.js';
         <circle id="ball" cx="50" cy="50" r="20" fill="blue" />
     
     </svg>
-    <div id="message"></div>
-    <script type="module" src="svgGAME.js " defer></script>
+    <div id="message">'klicke auf die Kugel'</div>
+<!--    <script type="module" src="svgGAME.js " defer></script>-->
         `;
         document.getElementById('startsvggame')//event for starting svg game
             .addEventListener("click",startGamesvg);

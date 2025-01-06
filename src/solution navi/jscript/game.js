@@ -9,13 +9,15 @@
     document.getElementById("demo").innerHTML = "Nächstes Spiel";});*/
 // Importation des fonctions spécifiques
 import { startGame, endGame } from './quizgame.js';
+import {startGamesvg, handleBallClick, ball, startButton} from './svgGAME.js';
+
 
     //Dom Elemente Deklaration
      let name="kamto";
      let  gametitle=document.getElementById("game-title") ;
      let gamearea=document.getElementById("game-area") ;
      var button=document.getElementById('button') ;
-     var questionh1=document.getElementById("question-h1");
+     var buttonsvg=document.getElementById('buttonsvg') ;
      var questiondiv=document.getElementById('questiondiv')
 //funktionen
 
@@ -51,14 +53,45 @@ import { startGame, endGame } from './quizgame.js';
         {button.textContent="Quiz starten";
             gamearea.innerHTML=` <div id="questiondiv">
             <h1 id="question">klicke auf  "Quiz starten" um Quiz zu Starten.</h1>
-            <ul id="answers"></ul>`});
+            <ul id="answers"></ul>` ;
+            button.addEventListener('click', startGame);
+            button.addEventListener('click', ()=>{
+                document.getElementById('question').innerText="Fragen werden geladen .warte 2 sec!";
+                button.textContent="Quiz neue starten";
+            });
 
-        button.addEventListener('click', startGame);
+        });
+
+
        // document.getElementById('end-game').addEventListener('click', endGame);
     }
-    
 // Initialisation
     button.addEventListener("click", spiel1_domselect)  ;
+    buttonsvg.addEventListener("click",()=>{ //even to enter svg game div
+        gametitle.innerText="Wilkommen zum SVG Spiel";
+
+        gamearea.innerHTML=`  
+    <div>
+        <label for="difficulty">wähle eine Schwierigkheit:</label>
+        <select id="difficulty">
+            <option value="easy">easy</option>
+            <option value="medium">medium</option>
+            <option value="hard">hard</option>
+        </select>
+        <button id="startsvggame">animation starten</button>
+    </div>
+    <svg id="area" width="100%" height="100" xmlns="http://www.w3.org/2000/svg">
+        <!-- kugel -->
+        <circle id="ball" cx="50" cy="50" r="20" fill="blue" />
+    
+    </svg>
+    <div id="message"></div>
+    <script type="module" src="svgGAME.js " defer></script>
+        `;
+        document.getElementById('startsvggame')//event for starting svg game
+            .addEventListener("click",startGamesvg);
+        document.getElementById('ball')    //event for clicking on the ball
+            .addEventListener("click", handleBallClick)  ;});
 
     // test
       //gamearea.firstElementChild.remove()

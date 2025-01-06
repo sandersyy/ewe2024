@@ -21,9 +21,12 @@
      width: 50%;
       height: 50px;
     }
+ #buttonsvg{
+      background-color: red;
+ }
 
 .button-5:hover,
-.button-5:focus {
+.button-5:focus,#buttonsvg:hover {
     background-color: darkblue;
     box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
 }

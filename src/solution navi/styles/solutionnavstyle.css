@@ -164,6 +164,22 @@ a.playy{
            place-content:inherit ;
            place-items: center;
        }
+    #answers{
+         display: flex;
+        flex-direction: column;
+        align-content: space-between;
+        width: 100%;
+    }
+ #answers  li:hover{
+     background-color: lawngreen;
+ }
+ #answers  li{
+     background-color: yellow;
+     margin: 10px;
+     color: black;
+     font-size: 20px;
+     border-radius: 14px;
+ }
 
 /*style for homemidcontainer*/
 .homemidcontainer{

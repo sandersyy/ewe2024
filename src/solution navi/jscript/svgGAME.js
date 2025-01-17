@@ -44,12 +44,14 @@ function animateBall() {
         ballPosition += ballDirection * speed;
 
         // check position to reverse animation  direction
+        gameAreasvg = document.getElementById('area');
         if (ballPosition >=gameAreasvg.clientWidth  - 50 || ballPosition <= 50) {
             ballDirection *= -1; // Change  direction
         }
 
         // position reset
-        ball.setAttribute('cx', ballPosition);
+        console.log(ballPosition);
+        document.getElementById('ball').setAttribute('cx', ballPosition);
 
         //
         requestAnimationFrame(animateBall);

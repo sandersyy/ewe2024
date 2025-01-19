@@ -76,12 +76,7 @@ a.playy{
 /*style for midcontainer*/
 
 .midcontainer {
-    /*
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
-    #gap: 0px 0px;
-    grid-auto-flow: row;
-    place-content: stretch;*/
+
     #grid-area: 2 / 1 / 3 / 2;
     display: grid;
     --auto-grid-min-size: 20rem;
@@ -95,14 +90,6 @@ a.playy{
     margin: 30px; /*distance to the top border*/
 }
 
-
-    /*
-  grid-template-rows: repeat(12, 1fr) ;
-  justify-content: stretch;
-  align-content: center;
-  justify-items: stretch;
-  align-items: stretch;
-  */
 
     .content {
     display: grid;
@@ -218,63 +205,12 @@ table, th, td {
     background-color:black;
     #background-color: #34495e;
 }
-/*@media screen and (max-width: 600px) {
-    div.example {
-        display: none;
-    }
-}*/
+
 
 /*Grid area  */
 .top {
     grid-area: 1 / 1 / 2 / 2;
 }
-/*.HTML{
-    grid-area: 1 / 1 / 2 / 2;
-}
-
-.CSS {
-    grid-area: 1 / 2 / 2 / 3;
-}
-
-.RWD {
-    grid-area: 1 / 3 / 2 / 4;
-}
-
-.JAVASCRIPT {
-    grid-area: 2 / 1 / 3 / 2;
-}
-
-.DOM {
-    grid-area: 2 / 2 / 3 / 3;
-}
-
-.ECMASCRIPT {
-    grid-area: 2 / 3 / 3 / 4;
-}
-
-.FunktionaleProgrammierung {
-    grid-area: 3 / 1 / 4 / 2;
-}
-
-.AsynchroneJScript {
-    grid-area: 3 / 2 / 4 / 3;
-}
-
-.SVG {
-    grid-area: 3 / 3 / 4 / 4;
-}
-
-.TypeScript {
-    grid-area: 4 / 1 / 5 / 2;
-}
-
-.PHP {
-    grid-area: 4 / 2 / 5 / 3;
-}
-
-.WebAppSecurity {
-    grid-area: 4 / 3 / 5 / 4;
-}*/
 
 .footer {
     grid-area: 3 / 1 / 4 / 2;

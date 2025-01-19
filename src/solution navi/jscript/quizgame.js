@@ -27,7 +27,7 @@ export async function startGame() {
 function displayQuestion() {
     // check if all questions have been added
     if (currentQuestionIndex >= filteredQuestions.length) {
-        calculateFinalScore(); // Calculer le score final à la fin
+        calculateFinalScore(); //
         return;
     }
 

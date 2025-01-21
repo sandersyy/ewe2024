@@ -1,6 +1,5 @@
 export const ball = document.getElementById('ball');
 let gameAreasvg = document.getElementById('area');
-let message = document.getElementById('message');
 let difficultySelector = document.querySelector("option");
 export const startButton = document.getElementById('startsvggame');
 
@@ -9,6 +8,7 @@ let ballPosition = 50; // initial position
 let speed = 2; //
 let gameInterval; //
 let gameRunning = false; //
+
 
 // start game function
 export function startGamesvg() {
@@ -65,6 +65,7 @@ export function handleBallClick() {
 
     // spiel stoppen
     stopGame();
+    let message = document.getElementById('message');
 
     //
     message.textContent = "Glückwunch !";
@@ -76,6 +77,3 @@ function stopGame() {
     gameRunning = false;
 }
 
-
-//startButton.addEventListener('click', startGamesvg);
-//ball.addEventListener('click', handleBallClick);

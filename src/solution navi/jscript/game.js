@@ -7,7 +7,7 @@
 
     myPromise.then(function() {
     document.getElementById("demo").innerHTML = "Nächstes Spiel";});*/
-// Importation des fonctions spécifiques
+// 
 import { startGame, endGame } from './quizgame.js';
 import {startGamesvg, handleBallClick} from './svgGAME.js';
 
@@ -29,8 +29,7 @@ import {startGamesvg, handleBallClick} from './svgGAME.js';
                     <input type="text" id="textinput1">
                 </div>`;
         button.textContent="Nächstes Spiel"
-        gamearea
-            .addEventListener("input",(e)=>
+        gamearea.addEventListener("input",(e)=>
             {if(e.target.id==='textinput1')name=e.target.value});
         //button.removeEventListener("click", spiel1_domselect);
         button.addEventListener("click", spiel2_nameEingabe);
@@ -85,7 +84,6 @@ import {startGamesvg, handleBallClick} from './svgGAME.js';
     
     </svg>
     <div id="message">'klicke auf die Kugel'</div>
-<!--    <script type="module" src="svgGAME.js " defer></script>-->
         `;
         document.getElementById('startsvggame')//event for starting svg game
             .addEventListener("click",startGamesvg);

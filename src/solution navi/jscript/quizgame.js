@@ -45,7 +45,8 @@ function displayQuestion() {
     // add eventlistener for every answer
     const answerElements = answersElem.querySelectorAll('li');
     answerElements.forEach((elem, index) => {
-        elem.addEventListener('click', () => checkAnswer(questionData.answers[index], questionData.correctAnswer));
+        elem.addEventListener('click',
+            () => checkAnswer(questionData.answers[index], questionData.correctAnswer));
     });
 }
 
@@ -115,9 +116,7 @@ function resetGame() {
     results = [];
 
     // Réinitialiser l'affichage
-    //document.getElementById('filters').style.display = 'block'; // Afficher le formulaire de sélection
-    //document.getElementById('game-container').style.display = 'none'; // Masquer le jeu
-    document.getElementById('answers').innerHTML = ''; // Effacer les réponses précédentes
+     document.getElementById('answers').innerHTML = ''; // Effacer les réponses précédentes
     document.getElementById('question').textContent = ''; // Effacer la question précédente
 }
 

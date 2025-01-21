@@ -27,6 +27,6 @@ export const getQuestions = () => {
                     difficulty: "difficile"
                 }
             ]);
-        }, 2000); // Simule un délai de 2 secondes
+        }, 2000); //
     });
 };
